@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: auto;
+    width: 10%;
+}
+
+.phoneContainer {
+    display: flex;
+    align-items: center;
+}
+
+.phoneNumber {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c5aa0; /* Blue color to match the logo */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.phoneNumber:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+    
+    .logo {
+        height: 45px;
+    }
+    
+    .phoneNumber {
+        font-size: 16px;
+    }
+}
