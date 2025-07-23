@@ -1,0 +1,147 @@
+:root {
+    --blue: #2c5aa0;
+    --red: #c8201a;
+    --dark: #1e2a39;
+    --text: #555;
+    --radius: 16px;
+  }
+  
+  .section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+    padding: 80px 40px;
+    background: url('../images/hero-plumbing.png') center/cover no-repeat;
+    color: #fff;
+  }
+  
+  /* Dark overlay for readability */
+  .section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 30, 50, 0.55);
+    z-index: 0;
+  }
+  
+  .copy,
+  .card {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ===== Left copy block ===== */
+  .copy {
+    max-width: 520px;
+  }
+  
+  .stars {
+    font-size: 22px;
+    color: #ffce31;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+  
+  .headline {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.1;
+    margin: 0 0 20px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,.4);
+  }
+  
+  .blurb {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #f0f3f8;
+    margin: 0;
+  }
+  
+  /* ===== Form card ===== */
+  .card {
+    width: 360px;
+    max-width: 100%;
+    background: var(--red);
+    padding: 28px 24px 32px;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(0,0,0,.25);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .formTitle {
+    margin: 0 0 10px;
+    font-size: 22px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    text-align: center;
+  }
+  
+  .label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    gap: 6px;
+  }
+  
+  .input,
+  .textarea {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 16px;
+    color: #222;
+    box-sizing: border-box;
+  }
+  
+  .input:focus,
+  .textarea:focus {
+    outline: 2px solid rgba(255,255,255,.7);
+  }
+  
+  .textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+  
+  /* Submit button */
+  .submit {
+    margin-top: 4px;
+    padding: 12px 0;
+    background: #133d8c;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s, opacity .15s;
+  }
+  .submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,.2);
+    opacity: .95;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .section {
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      gap: 40px;
+    }
+    .copy { text-align: center; }
+  }
+  
+  @media (max-width: 480px) {
+    .card { width: 100%; }
+  }
+  

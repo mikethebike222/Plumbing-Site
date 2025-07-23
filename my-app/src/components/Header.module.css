@@ -1,51 +1,163 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 14px 48px;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,.08);
+  gap: 32px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.98);
 }
 
-.logoContainer {
-    display: flex;
-    align-items: center;
+/* Bigger logo like the example */
+.logoWrap { 
+  display: flex; 
+  align-items: center; 
 }
 
-.logo {
-    height: auto;
-    width: 10%;
+.logo { 
+  max-height: 96px; 
+  width: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-.phoneContainer {
-    display: flex;
-    align-items: center;
+.logo:hover {
+  transform: scale(1.05);
 }
 
-.phoneNumber {
-    font-size: 18px;
-    font-weight: 600;
-    color: #2c5aa0; /* Blue color to match the logo */
-    text-decoration: none;
-    transition: all 0.3s ease;
+.nav {
+  display: flex;
+  gap: 40px;
+  margin-left: auto;
+  align-items: center;
 }
 
-.phoneNumber:hover {
-    text-decoration: underline;
-    opacity: 0.8;
+.link {
+  font-size: 17px;
+  font-weight: 600;
+  color: #2c5aa0;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
 }
 
-/* Responsive design for mobile */
+.link:hover { 
+  color: #1e3d6f;
+  background: rgba(44, 90, 160, 0.06);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  height: 2px;
+  background: linear-gradient(90deg, #2c5aa0, #4a7bc7);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.link:hover::after { 
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Phone call-to-action styled as a pill */
+.phoneBtn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #b3201b 0%, #d42520 100%);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(179, 32, 27, 0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+}
+
+.phoneBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.phoneBtn:hover::before {
+  left: 100%;
+}
+
+.phoneBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(179, 32, 27, 0.35);
+}
+
+/* Subtle animation on load */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  animation: slideDown 0.5s ease-out;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-    .header {
-        padding: 15px 20px;
-    }
-    
-    .logo {
-        height: 45px;
-    }
-    
-    .phoneNumber {
-        font-size: 16px;
-    }
+  .header { 
+    padding: 12px 20px; 
+    gap: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.1);
+  }
+  
+  .logo { 
+    max-height: 56px; 
+  }
+  
+  .nav { 
+    display: none; 
+  }
+  
+  .phoneBtn { 
+    font-size: 16px; 
+    padding: 10px 20px; 
+    margin-left: auto;
+    font-weight: 600;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    padding: 14px 32px;
+  }
+  
+  .nav {
+    gap: 28px;
+  }
+  
+  .link {
+    font-size: 16px;
+  }
 }
