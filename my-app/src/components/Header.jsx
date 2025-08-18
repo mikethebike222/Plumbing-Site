@@ -3,7 +3,7 @@ import styles from './Header.module.css'
 
 const Header = () => (
   <header className={styles.header}>
-      <img className={styles.logo} src={logo} alt="JC Plumbing" />
+      <img className={styles.logo} src={logo} alt="JC Services & Repairs" />
 
     <nav className={styles.nav}>
       <a href="#why-us" className={styles.link}>Why Us</a>

@@ -13,14 +13,14 @@ const WhyUs = () => {
       description: "Decades of expertise ensuring quality workmanship and reliable service."
     },
     {
-      icon: "🛡️",
-      title: "Fully Licensed & Insured",
-      description: "Complete peace of mind with proper licensing and comprehensive insurance coverage."
+      icon: "⭐",
+      title: "Quality Service",
+      description: "We deliver exceptional workmanship and attention to detail on every job."
     },
     {
-      icon: "❤️",
-      title: "Trust Customers Like Family",
-      description: "We treat every customer with the same care and respect as our own family."
+      icon: "🔧",
+      title: "Long Lasting Service",
+      description: "Our repairs and installations are built to last, saving you money in the long run."
     }
   ]
 
@@ -28,7 +28,7 @@ const WhyUs = () => {
     <section id="why-us" className={styles.whyUs}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Why Choose JC Plumbing?</h2>
+          <h2 className={styles.title}>Why Choose JC Services?</h2>
           <p className={styles.subtitle}>
             Experience the difference that family values and professional expertise make
           </p>

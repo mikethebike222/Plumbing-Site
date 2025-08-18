@@ -4,7 +4,7 @@ const Quote = () => (
   <section id="quote" className={styles.section}>
     <div className={styles.copy}>
       <div className={styles.stars}>★★★★★</div>
-      <h1 className={styles.headline}>JC Plumbing<br/>Services & Repairs</h1>
+      <h1 className={styles.headline}>JC Services & Repairs</h1>
       <p className={styles.blurb}>
         Sewer & drain cleaning, toilet/sink/shower repairs—fast, honest, local.
       </p>
