@@ -12,7 +12,7 @@ const Header = () => (
     </nav>
 
     <a href="tel:914-751-9052" className={styles.phoneBtn}>
-      (914) 751‑9052
+      <span aria-hidden="true">📞</span> (914) 751‑9052
     </a>
   </header>
 )

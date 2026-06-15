@@ -28,6 +28,7 @@ const WhyUs = () => {
     <section id="why-us" className={styles.whyUs}>
       <div className={styles.container}>
         <div className={styles.header}>
+          <span className={styles.eyebrow}>Why Choose Us</span>
           <h2 className={styles.title}>Why Choose JC Services?</h2>
           <p className={styles.subtitle}>
             Experience the difference that family values and professional expertise make

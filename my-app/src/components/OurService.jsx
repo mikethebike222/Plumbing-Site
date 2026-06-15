@@ -28,6 +28,7 @@ const OurService = () => {
     <section id="services" className={styles.services}>
       <div className={styles.container}>
         <div className={styles.header}>
+          <span className={styles.eyebrow}>What We Do</span>
           <h2 className={styles.title}>Our Services</h2>
           <p className={styles.subtitle}>
             Professional plumbing solutions for all your residential and commercial needs

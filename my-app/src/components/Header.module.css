@@ -4,53 +4,50 @@
   z-index: 1000;
   display: flex;
   align-items: center;
-  padding: 14px 48px;
-  background: #fff;
-  box-shadow: 0 2px 16px rgba(0,0,0,.08);
   gap: 32px;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.98);
+  padding: 14px 48px;
+  min-height: var(--header-h);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--slate-200);
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  animation: slideDown 0.5s ease-out;
 }
 
-/* Bigger logo like the example */
-.logoWrap { 
-  display: flex; 
-  align-items: center; 
-}
-
-.logo { 
-  max-height: 96px; 
+.logo {
+  max-height: 58px;
   width: auto;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
 
 .logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .nav {
   display: flex;
-  gap: 40px;
+  gap: 36px;
   margin-left: auto;
   align-items: center;
 }
 
 .link {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
-  color: #2c5aa0;
+  color: var(--blue-700);
   text-decoration: none;
   position: relative;
-  transition: all 0.3s ease;
+  transition: color 0.25s ease, background 0.25s ease;
   padding: 8px 12px;
-  border-radius: 6px;
-  letter-spacing: 0.3px;
+  border-radius: 8px;
+  letter-spacing: 0.2px;
 }
 
-.link:hover { 
-  color: #1e3d6f;
-  background: rgba(44, 90, 160, 0.06);
+.link:hover {
+  color: var(--blue-800);
+  background: rgba(44, 90, 160, 0.07);
 }
 
 .link::after {
@@ -58,33 +55,38 @@
   position: absolute;
   left: 12px;
   right: 12px;
-  bottom: 6px;
+  bottom: 4px;
   height: 2px;
-  background: linear-gradient(90deg, #2c5aa0, #4a7bc7);
+  background: linear-gradient(90deg, var(--blue-600), var(--blue-400));
+  border-radius: 2px;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
 }
 
-.link:hover::after { 
+.link:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
 /* Phone call-to-action styled as a pill */
 .phoneBtn {
-  padding: 12px 28px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #b3201b 0%, #d42520 100%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--red-600) 0%, var(--red-500) 100%);
   color: #fff;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(179, 32, 27, 0.25);
-  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(200, 32, 26, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   position: relative;
   overflow: hidden;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 .phoneBtn::before {
@@ -94,7 +96,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   transition: left 0.6s ease;
 }
 
@@ -104,10 +106,9 @@
 
 .phoneBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(179, 32, 27, 0.35);
+  box-shadow: 0 10px 26px rgba(200, 32, 26, 0.4);
 }
 
-/* Subtle animation on load */
 @keyframes slideDown {
   from {
     transform: translateY(-100%);
@@ -119,45 +120,40 @@
   }
 }
 
-.header {
-  animation: slideDown 0.5s ease-out;
-}
-
 /* Mobile */
 @media (max-width: 768px) {
-  .header { 
-    padding: 12px 20px; 
+  .header {
+    padding: 10px 20px;
     gap: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,.1);
+    min-height: 0;
   }
-  
-  .logo { 
-    max-height: 56px; 
+
+  .logo {
+    max-height: 46px;
   }
-  
-  .nav { 
-    display: none; 
+
+  .nav {
+    display: none;
   }
-  
-  .phoneBtn { 
-    font-size: 16px; 
-    padding: 10px 20px; 
+
+  .phoneBtn {
+    font-size: 15px;
+    padding: 10px 18px;
     margin-left: auto;
-    font-weight: 600;
   }
 }
 
 /* Tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
   .header {
-    padding: 14px 32px;
+    padding: 12px 28px;
   }
-  
+
   .nav {
-    gap: 28px;
+    gap: 24px;
   }
-  
+
   .link {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
